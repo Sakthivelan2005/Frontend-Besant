@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: url("background.ca634d4edc3fc9792488026b73ae80f6.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 5%;
+        }
+        form{
+            font-family:Arial, Helvetica, sans-serif;
+            padding: 20px;
+        }
+        form .important{
+            color: red;
+        }
+        section{
+            background-color: white;
+            border: 8px solid white;
+            width: 90%;
+            border-radius: 20px;
+            justify-content: center;
+            align-items: center;
+
+        }
+        section h1{
+            background-color: red;
+            border-radius: 20px 20px 0 0;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-family: 'Oleo Script Swash Caps', cursive;
+        
+        }
+        section p{
+            font-size: 20px;
+            padding: 20px;
+            font-family:'Times New Roman', Times, serif;
+            color: orange;
+        }
+        .details{
+            margin-left: 20px;
+        }   
+        section form input, select {
+            background-color: rgb(251, 223, 223);
+            border-radius: 20px;
+            border: none;
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            color: rgb(255, 0, 43);
+        }
+         section form input[type="text"]:hover{
+            background-color: rgb(251, 223, 223);
+            border-radius: 20px;
+            border: none;
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            color: rgb(255, 0, 43);
+            border: 1px solid green;
+            box-shadow: 0 0 5px green;
+        }
+         section form select:hover{
+            background-color: rgb(251, 223, 223);
+            border-radius: 20px;
+            border: none;
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            color: rgb(255, 0, 43);
+            border: 1px solid green;
+            box-shadow: 0 0 5px green;
+        }
+         section form input[type="email"]{
+            background-color: rgb(251, 223, 223);
+            border-radius: 20px;
+            border: none;
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            color: rgb(255, 0, 43);
+        }
+        section form input[type="email"]:focus{
+            background-color: rgb(251, 223, 223);
+            border-radius: 20px;
+            width: 95%;
+            padding: 10px;
+            margin: 10px 0;
+            color: rgb(255, 0, 43);
+            border: 2px solid green;
+            box-shadow: 0 0 5px green;
+        }
+        label:enabled
+        section form select option{
+            border-radius: 20px;
+            color: rgb(255, 0, 43);
+
+        }
+        section form input[type="radio"]{
+            width: 20px;
+        }
+        section form table{
+            padding: 5px;
+            align-items: center;
+            width: 100%;
+        }
+        section form table tr td p{
+            text-align:left;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+            color: rgb(151, 149, 149);
+        }
+
+        section form .Answers{
+           color: red;;
+        }
+        section form .submit{
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            width: 100%;
+            display: flex;
+        }
+        section form .submit button{
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+        section form .submit button:hover{
+            background-color: rgb(179, 0, 0);
+            color: white;
+            border: 2px solid orange;
+            box-shadow: 2px 0 10px orange;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+        .facebook{
+            position:fixed;
+            bottom: 10px;
+            right: 10px;
+        }
+        .facebook img{
+            width: 90px
+        }
+        .facebook h1{
+            opacity: 0;
+        }
+        .facebook:hover h1{
+            opacity: 1;
+            color: rgb(65, 111, 250);
+            text-shadow: 2px 0 5px rgb(255, 255, 255);
+            font-family: 'Oleo Script Swash Caps', cursive;
+            transition: opacity 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Reunion Form</h1>
+        <div class="details">
+            <p>Date  : <b>01-05-2017</b></p>
+            <p>Time  : <b>6pm onwards</b></p>
+            <p>Place : <b>ABC Park, Austin City, Texas</b></p>
+        </div>
+        <form action="#">
+            <label for="name">Name <span class="important">*</span></label>
+            <table>
+                <tr>
+                    <td><input type="text" id="fname" name="fname"></td>
+                    <td><input type="text" id="lname" name="lname"></td>
+                </tr>
+                <tr>
+                    <td><p>First</p></td>
+                    <td><p>Last</p></td>
+                </tr>
+            </table>
+            <br>
+            <label for="YOP">Year of Passing <span class="important">*</span></label>
+            <br>
+            <select name="YOP">
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+            </select>
+            <br>
+            <label for="GName">Guest Name</label>
+            <br>
+            <input type="text" name="Gname">
+            <br>
+            <label for="email">Email <span class="important">*</span></label>
+            <br>
+            <input type="email" name="email">
+            <br>
+            <label for="souvenir">Would you like a souvenir? <span class="important">*</span></label>
+            <br>
+            <div class="Answers">
+            <input type="radio" name="souvenir" >  Yes 
+            <br>
+            <input type="radio" name="souvenir" >  No
+            </div>
+            <br>
+            <label for="like">What would you like? </label>
+            <br>
+            <div class="Answers">
+            <input type="radio" name="like" >  Photos 
+            <br>
+            <input type="radio" name="like" >  A DVD Video
+            </div>
+            <br>
+            <div class="submit">
+                <button >Submit</button>
+            </div>
+            </form>
+        </form>
+    </section>
+    <div class="facebook">
+        <h1>Facebook</h1>
+    <a href="https://www.facebook.com"><img src="./images//communication.png"></a>
+    </div>
+</body>
+</html>

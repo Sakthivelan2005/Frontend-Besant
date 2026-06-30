@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .b1{
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background-color: red;
+            position: absolute;
+            z-index: 1;
+        }
+        .b2{
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background-color: blue;
+            position: absolute;
+            
+            z-index: 0;
+            top: 20px;
+        }
+        .b3{
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            background-color: green;
+            position: absolute;
+            top: 40px;
+            z-index: -1;
+        }
+        section{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <div class="b1">.</div>
+        <div class="b2">.</div>
+        <div class="b3">.</div>
+    </section>
+</body>
+</html>

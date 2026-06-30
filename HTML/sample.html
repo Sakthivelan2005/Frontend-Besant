@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HTML element - Wikipedia</title>
+</head>
+<body>
+<img src="wikipedia-wordmark-en-25.svg" alt="wikipedia logo" width="200px" >
+<div align="center">
+  
+</div>
+
+
+<h1>HTML element</h1>
+
+<hr>
+
+<p>
+  An <b>HTML element</b> is a type of <a href="RedirectedPage.html">HTML</a> (<a href="RedirectedPage.html">HyperText Markup Language</a>) document component, one of several types
+  of HTML <a href="RedirectedPage.html">nodes</a> (some common node types include document, document fragment and <a href="RedirectedPage.html">attribute</a> nodes).<sup><a href="RedirectedPage.html">[1]</a></sup> The
+  first used version of HTML was written by <a href="RedirectedPage.html">Tim Berners-Lee</a> in 1993 and there have since been many versions of
+  HTML. The current de facto standard is governed by the industry group <a href="RedirectedPage.html">WHATWG</a> and is known as the <a href="RedirectedPage.html">HTML
+  Living Standard</a>.
+</p>
+
+<p>
+  An HTML document is composed of a <a href="RedirectedPage.html">tree</a> of simple HTML nodes, such as text nodes, and HTML elements, which
+  add <a href="RedirectedPage.html">semantics</a> and formatting to parts of a document (e.g., make text bold, organize it into paragraphs, lists and
+  tables, or embed <a href="RedirectedPage.html">hyperlinks</a> and images). Each element can have <a href="RedirectedPage.html">HTML attributes</a> specified. Elements can also
+  have content, including other elements and text.
+</p>
+
+<hr>
+
+<h2>Concepts</h2>
+
+<hr>
+
+<table width="100%" cellpadding="10" >
+<tr>
+<td valign="top" width="60%">
+
+<h3>Elements vs. tags</h3>
+
+<p>
+  As is generally understood, the position of an element is indicated as
+  spanning from a start tag and is terminated by an end tag.<sup><a href="RedirectedPage.html">[2]</a></sup> This is the
+  case for many, but not all, elements within an HTML document. The
+  distinction is explicitly emphasised in <i>HTML 4.01 Specification</i>:<sup><a href="RedirectedPage.html">[3]</a></sup>
+</p>
+
+<blockquote>
+  <p>Elements are not tags. Some people refer to elements as tags
+  (e.g., "the P tag"). Remember that the element is one thing, and
+  the tag (be it start or end tag) is another. For instance, the HEAD
+  element is always present, even though both start and end HEAD
+  tags may be missing in the markup.</p>
+</blockquote>
+
+</td>
+<td valign="top" width="40%" align="center">
+  <img src="HTML_element_content_categories.svg" alt="HTML element content categories" width="280">
+  <br>
+  <small>HTML element content categories</small>
+</td>
+</tr>
+</table>
+
+<p>Similarly the W3C Recommendation <i>HTML 5.1 2nd Edition</i> explicitly says:<sup><a href="RedirectedPage.html">[4]</a></sup></p>
+
+<blockquote>
+  <p>Tags are used to delimit the start and end of elements in the markup. [...] The start and end tags of
+  certain normal elements can be omitted. [...]<br>
+  The contents of the element must be placed between just after the start tag (which might be implied, in
+  certain cases) and just before the end tag (which again, might be implied in certain cases).</p>
+</blockquote>
+
+<p>and:<sup><a href="RedirectedPage.html">[4]</a></sup></p>
+
+<blockquote>
+  <p>Certain tags can be omitted.<br>
+  NOTE:<br>
+  Omitting an element's start tag [...] does not mean the element is not present; it is implied, but it is still
+  there. For example, an HTML document always has a root <code>< html ></code> element, even if the
+  string <code> < html > </code> doesn't appear anywhere in the markup.</p>
+</blockquote>
+
+<p>
+  As HTML (before <a href="RedirectedPage.html">HTML5</a>) is based on <a href="RedirectedPage.html">SGML</a>,<sup><a href="RedirectedPage.html">[5]</a></sup> its parsing also depends on the <a href="RedirectedPage.html">Document Type
+  Definition</a> (DTD), specifically an HTML DTD (e.g. HTML 4.01).<sup><a href="RedirectedPage.html">[6]</a><a href="RedirectedPage.html">[note 1]</a></sup> The DTD specifies which element types
+  are possible (i.e. it defines the set of element types) and also the valid combinations in which they may appear in a
+  document. It is part of general SGML behavior that, where only one valid structure is <i>possible</i> (per the DTD), its
+  explicit statement in any given document is not generally required. As a simple example, the <code><p>< p></code> tag indicating the start of a paragraph element should be complemented by a <code>< / p ></p></code> tag indicating its end. But since the DTD states  that paragraph elements cannot be nested, an HTML document fragment <code>< p > Para 1 < / p > < p >Para 2 < / p >< p >Para 3 < / p></code> is  thus inferred to be equivalent to <code>< p >Para 1 < /p > < p > Para 2 < /p > < p >Para 3 < / p ></code>. < /pre>(If one paragraph element cannot contain another, any currently open paragraph must be closed before starting another.) Because this implication is based on the combination of the DTD and the individual document, it is not usually possible to infer elements
+  from document tags <i>alone</i> but only by using an SGML—or HTML—aware parser with knowledge of the DTD.
+  HTML5 creates a similar result by defining what tags can be omitted.<sup><a href="RedirectedPage.html">[7]</a></sup>
+</p>
+
+<h3>SGML vs. XML</h3>
+
+<p>
+  SGML is complex, which has limited its widespread understanding and adoption. <a href="RedirectedPage.html">XML</a> was developed as a simpler
+  alternative. Although both can use the DTD to specify the supported elements and their permitted combinations
+  as document structure, XML parsing is simpler. The relation from tags to elements is always that of parsing the
+  actual tags included in the document, without the implied closures that are part of SGML.<sup><a href="RedirectedPage.html">[note 2]</a></sup>
+</p>
+
+<p>
+  HTML as used on the current web is likely to be either treated as XML, by being <a href="RedirectedPage.html">XHTML</a>, or as HTML5; in either
+  case the parsing of document tags into <a href="RedirectedPage.html">Document Object Model</a> (DOM) elements is simplified compared to legacy
+  HTML systems. Once the DOM of elements is obtained, behavior at higher levels of interface (example: screen
+  rendering) is identical or nearly so.<sup><a href="RedirectedPage.html">[note 3]</a></sup>
+</p>
+
+<h3>%block; vs. box</h3>
+
+<p>
+  Part of this CSS presentation behavior is the notion of the "<a href="RedirectedPage.html">box model</a>". This is applied to those elements that CSS
+  considers to be "block" elements, set through the CSS <code><b>display: block;</b></code> declaration.
+</p>
+
+<p>
+  HTML also has a similar concept, although different, and the two are very frequently
+  confused. <code>%block;</code> and <code>%inline;</code> are groups within the HTML DTD that group elements as being either "block-level" or "inline".<sup><a href="RedirectedPage.html">[9]</a></sup> This is used to define their nesting behavior: block-level elements cannot be placed into an
+  inline context.<sup><a href="RedirectedPage.html">[note 4]</a></sup> This behavior cannot be changed; it is fixed in the DTD. Block and <a href="RedirectedPage.html">inline elements</a> have the
+  appropriate and different CSS behaviors attached to them by default,<sup><a href="RedirectedPage.html">[9]</a></sup> including the relevance of the box model
+  for particular element types.
+</p>
+
+<p>
+  Note though that this CSS behavior can, and frequently is, changed from the default. Lists with <code>< ul ></code>
+  <code>< li ></code> ... are the elements and are presented as block elements by default. However, it is quite common to
+  set these with CSS to display as an inline list.<sup><a href="RedirectedPage.html">[10]</a></sup>
+</p>
+
+<hr>
+
+<h2>Overview</h2>
+
+<hr>
+
+<h3>Syntax</h3>
+
+<table width="100%" cellpadding="10">
+<tr>
+<td valign="top" width="55%">
+<p>
+  In the HTML <a href="RedirectedPage.html">syntax</a>, most elements are written with a start
+  tag and an end tag, with the content in between. An HTML
+  tag is composed of the name of the element, surrounded
+  by <a href="RedirectedPage.html">angle brackets</a>. An end tag also has a slash after the
+  opening angle bracket.<sup><a href="RedirectedPage.html">[11]</a>:<sup>23–24</sup></sup> For example, a paragraph,
+  which is represented by the <code>< p ></code> element, would be written as:
+</p>
+</td>
+<td valign="top" width="45%" align="center">
+  <img src="HTML_container_element.svg" alt="Parts of an HTML container element" width="300">
+  <br>
+  <small>Parts of an HTML container element</small>
+</td>
+</tr>
+</table>
+
+<blockquote>
+  <code><p> < p > In the HTML syntax, most elements are written ...< / p ></p></code>
+</blockquote>
+
+<p>
+  However, not all of these elements <i>require</i> the end tag, or even the start tag, to be present.<sup><a href="RedirectedPage.html">[7]</a></sup> Some elements, the  so-called <a href="RedirectedPage.html"><i>void elements</i></a>, do not have an end tag. A typical example is the <code> < br > </code> (hard <a href="RedirectedPage.html">line-break</a>) element. A void  element's behavior is predefined, and it cannot contain any content or other elements. For example, an address
+  would be written as:
+</p>
+
+<blockquote>
+  <pre><code><p>< p > P. Sherman < br > 42 Wallaby Way < br > Sydney < / p ></p></code></pre>
+</blockquote>
+
+
+<div align="center"></div>
+
+<p>
+  When using <a href="RedirectedPage.html">XHTML</a>, it is required to open and close all elements, including void elements. This can be done by
+  placing an end tag immediately after the start tag, but this is not legal in HTML 5 and will lead to two elements
+  being created. An alternative way to specify that it is a void element, which is compatible with both XHTML and
+  HTML 5, is to put a <code>/</code> at the <i>end</i> of the tag (not to be confused with the <code>/</code> at the <i>beginning</i> of a closing tag).
+</p>
+
+<blockquote>
+  <pre><code>< p > P. Sherman < br /> 42 Wallaby Way < br /> Sydney < / p ></p></code></pre>
+</blockquote>
+
+<p>
+  HTML attributes are specified inside the start tag and are composed of the attribute's name, followed by an equals
+  <a href="RedirectedPage.html">sign</a>, and then the value. For example:<sup><a href="RedirectedPage.html">[11]</a>:<sup>25–26</sup></sup>
+</p>
+
+<blockquote>
+  <pre><code><p lang="en-us">< p > Paragraph in English< /p> </p></code></pre>
+</blockquote>
+
+<p>Since <a href="RedirectedPage.html">HTML5</a>, HTML allows the use of uppercase attribute names and omission of quotemarks.<sup><a href="RedirectedPage.html">[11]</a>:<sup>26</sup></sup></p>
+
+<p>
+  Informally, HTML elements are sometimes referred to as "tags" (an example of <a href="RedirectedPage.html">synecdoche</a>), though many prefer
+  the term <i>tag</i> strictly in reference to the markup delimiting the start and end of an element.
+</p>
+
+<p>
+  Element (and attribute) names may be written in any combination of upper or lower case in HTML, but must be in
+  lower case in XHTML.<sup><a href="RedirectedPage.html">[12]</a></sup> The canonical form was upper-case until <a href="RedirectedPage.html">HTML 4</a>, and was used in HTML
+  specifications, but in recent years, lower-case has become more common.
+</p>
+
+<h3>Types of element</h3>
+
+<p>There are three kinds of <a href="RedirectedPage.html">HTML</a> elements: normal elements, raw text elements, and void elements.</p>
+
+<p>
+  <b>Normal elements</b> usually have both a start tag and an end tag, although for some elements the end tag, or both
+  tags, can be omitted. It is constructed in a similar way:
+</p>
+
+<ul>
+  <li>a <i>start tag</i> (<code>< tag ></code>) marking the beginning of an element, which may incorporate any number of <a href="RedirectedPage.html">HTML</a> attributes;</li>
+  <li>some amount of <i>content</i>, including text and other elements;</li>
+  <li>an <i>end tag</i>, in which the element name is prefixed with a <a href="RedirectedPage.html">slash</a>: <code></ tag ></code>.</li>
+</ul>
+
+<p><b>Raw text elements</b> (also known as text or text-only elements) are constructed with:</p>
+
+<ul>
+  <li>a <i>start tag</i> (in the form <code>< tag ></code>) marking the beginning of an element, which may incorporate any number of HTML attributes;</li>
+  <li>some amount of text <i>content</i>, but no elements (all tags, apart from the applicable end tag, will be interpreted as content);</li> <li>an <i>end tag</i>, in which the element name is prefixed with a slash: <code></ tag ></code>. In some versions of HTML, the end tag is optional for some elements. The end tag is required in XHTML.</li>
+</ul>
+
+<p>
+  <b>Void elements</b> (also sometimes called empty elements, single elements or stand-alone elements) only have a
+  start tag (in the form <code>< tag ></code>), which contains any HTML attributes. They may not contain any children, such as
+  text or other elements. For compatibility with <a href="RedirectedPage.html">XHTML</a>, the HTML specification allows an optional space and slash (<code>< tag /></code> is permissible). The slash is required in <a href="RedirectedPage.html">XHTML</a> and other <a href="RedirectedPage.html">XML</a> applications. Two common void
+  elements are <code><b>< br / ></b></code> (for a <a href="RedirectedPage.html">hard line-break</a>, such as in a poem or an address) and <code><b>< hr ></b></code> (for a <a href="RedirectedPage.html">thematic break</a>).
+  Other such elements are often place-holders which reference external files, such as the image (<code><b>< img /></b></code>) element.
+  The attributes included in the element will then point to the external file in question. Another example of a void
+  element is <code><b>< link/></b></code>, for which the syntax is:
+</p>
+
+<blockquote>
+  <pre><code>< link rel="stylesheet" href="fancy.css" type="text/css" ></code></pre>
+</blockquote>
+
+<p>
+  This <code><b>< link /> </b></code> element points the browser at a <a href="RedirectedPage.html">style sheet</a> to use when presenting the HTML document to the  user. In the HTML syntax attributes do not have to be quoted if they are composed only of certain characters:
+  letters, digits, the hyphen-minus and the period. When using the XML syntax (XHTML), on the other hand, all
+</p>
+
+
+<div align="center"></div>
+
+<p>attributes must be quoted, and a spaced trailing <a href="RedirectedPage.html">slash</a> is required before the last angle bracket:</p>
+
+<blockquote>
+  <pre><code>< link rel="stylesheet" href="fancy.css" type="text/css" / ></code></pre>
+</blockquote>
+
+<h3>Attributes</h3>
+
+<p>
+  <a href="RedirectedPage.html"><b>HTML attributes</b></a> define desired behavior or indicate additional element properties. Most attributes require
+  a <i>value</i>. In HTML, the value can be left unquoted if it does not include spaces (<code>attribute=value</code>), or it can be
+  quoted with single or double quotes (<code>attribute='value'</code> or <code>attribute="value"</code>). In <a href="RedirectedPage.html">XML</a>, those quotes are
+  required.
+</p>
+
+<p>
+  <a href="RedirectedPage.html">Boolean</a> attributes, on the other hand, do not require a value to be specified. An example is the <code>checked</code> for
+  checkboxes:
+</p>
+
+<blockquote>
+  <pre><code>< input type=checkbox checked ></code></pre>
+</blockquote>
+
+<p>In the XML (and thus <a href="RedirectedPage.html">XHTML</a>) syntax, though, a value is required, and the name should be repeated as the value:</p>
+
+<blockquote>
+  <pre><code>< input type="checkbox" checked="checked" / ></code></pre>
+</blockquote>
+
+<h3>Element standards</h3>
+
+<p>
+  HTML elements are defined in a series of freely available open standards issued since 1995, initially by
+  the <a href="RedirectedPage.html">IETF</a> and subsequently by the <a href="RedirectedPage.html">W3C</a>.
+</p>
+
+<p>
+  During the <a href="RedirectedPage.html">browser wars</a> of the 1990s, developers of <a href="RedirectedPage.html">user agents</a> (e.g. <a href="RedirectedPage.html">web browsers</a>) often developed their own
+  elements, some of which have been adopted in later standards. Other user agents may not recognize non-standard
+  elements, and they will be ignored, possibly causing the page to be displayed improperly.
+</p>
+
+<p>
+  In 1998, <a href="RedirectedPage.html">XML</a> (a simplified form of SGML) introduced mechanisms to allow anyone to develop their own elements
+  and incorporate them in <a href="RedirectedPage.html">XHTML</a> documents, for use with XML-aware user agents.<sup><a href="RedirectedPage.html">[13]</a></sup>
+</p>
+
+<p>
+  Subsequently, HTML 4.01 was rewritten in an <a href="RedirectedPage.html">XML</a>-compatible form, <a href="RedirectedPage.html">XHTML 1.0</a> (<i>eXtensible HTML</i>). The
+  elements in each are identical, and in most cases valid XHTML 1.0 documents will be valid or nearly valid HTML
+  4.01 documents. This article mainly focuses on real HTML, unless noted otherwise; however, it remains applicable
+  to XHTML. See <a href="RedirectedPage.html">HTML</a> for a discussion of the minor differences between the two.
+</p>
+
+<h3>Element status</h3>
+
+<p>
+  Since the first version of HTML, several elements have become outmoded, and are <a href="RedirectedPage.html"><i>deprecated</i></a> in later standards,
+  or do not appear at all, in which case they are <i>invalid</i> (and will be found invalid, and perhaps not displayed,
+  by <a href="RedirectedPage.html">validating</a> user agents).<sup><a href="RedirectedPage.html">[14]</a></sup>
+</p>
+
+<p>In <a href="RedirectedPage.html">HTML 4.01</a> / <a href="RedirectedPage.html">XHTML 1.0</a>, the status of elements is complicated by the existence of three types of <a href="RedirectedPage.html">DTD</a>:</p>
+
+<ul>
+  <li><i>Transitional</i>, which contain deprecated elements, but which were intended to provide a transitional period during which authors could update their practices;</li>
+  <li><i>Frameset</i>, which are versions of the Transitional DTDs which also allow authors to write <a href="RedirectedPage.html">frameset</a> documents;</li>
+  <li><i>Strict</i>, which is the up-to-date (as at 1999) form of HTML.</li>
+</ul>
+
+<p>
+  HTML5 instead provides a listing of <i>obsolete</i> features to go along with the <i>standardized</i> <a href="RedirectedPage.html">normative</a> content. They
+  are broken down into "obsolete but conforming" for which implementation instructions exist and "non-
+  conforming" ones that should be replaced.<sup><a href="RedirectedPage.html">[15]</a></sup>
+</p>
+
+<p>
+  The first Standard (HTML 2.0) contained four deprecated elements, one of which was invalid in HTML 3.2. All
+  four are invalid in <a href="RedirectedPage.html">HTML 4.01 Transitional</a>, which also deprecated a further ten elements. All of these, plus two
+  others, are invalid in <a href="RedirectedPage.html">HTML 4.01 Strict</a>. While the frame elements are still current in the sense of being present in
+</p>
+
+<div align="center"></div>
+
+<p>
+  the Transitional and Frameset DTDs, there are no plans to preserve them in future standards, as their function
+  has been largely replaced, and they are highly problematic for user accessibility.
+</p>
+
+<p>
+  (Strictly speaking, the most recent <i>XHTML</i> standard, XHTML 1.1 (2001), does not include frames at all; it is
+  approximately equivalent to <a href="RedirectedPage.html">XHTML 1.0 Strict</a>, but also includes the <a href="RedirectedPage.html">Ruby markup</a> module.)<sup><a href="RedirectedPage.html">[16]</a></sup>
+</p>
+
+<p>
+  A common source of confusion is the loose use of <i>deprecated</i> to refer to both deprecated and invalid status, and to
+  elements that are expected to be formally deprecated in the future.
+</p>
+
+<h3>Content vs. presentation and behavior</h3>
+
+<p>
+  Since HTML 4, HTML has increasingly focused on the separation of content (the visible text and images) from
+  presentation (like color, font size, and layout).<sup><a href="RedirectedPage.html">[17]</a></sup> This is often referred to as a <a href="RedirectedPage.html">separation of concerns</a>. HTML is
+  used to represent the structure or content of a document, its presentation remains the sole responsibility
+  of <a href="RedirectedPage.html">CSS</a> style sheets. A default <a href="RedirectedPage.html">style sheet</a> is suggested as part of the CSS standard, giving a default rendering for
+  HTML.<sup><a href="RedirectedPage.html">[18]</a></sup>
+</p>
+
+<p>
+  Behavior (interactivity) is also kept separate from content, and is handled by <a href="RedirectedPage.html">scripts</a>. Images are contained in
+  separate <a href="RedirectedPage.html">graphics</a> files, separate from text, though they can also be considered part of the content of a page.
+</p>
+
+<p>
+  Separation of concerns allows the document to be presented by different user agents according to their purposes
+  and abilities. For example, a user agent can select an appropriate style sheet to present a document by displaying
+  on a monitor, printing on paper, or to determine speech characteristics in an audio-only user agent. The structural
+  and semantic functions of the markup remain identical in each case.
+</p>
+
+<p>
+  Historically, user agents did not always support these features. In the 1990s, as a stop-gap, presentational
+  elements (like <code>< b ></b></code> and <code>< i ></code>) were added to HTML, at the cost of creating problems for interoperability and user
+  accessibility. This is now regarded as outmoded and has been superseded by style sheet-based design; most
+  presentational elements are now deprecated.<sup><a href="RedirectedPage.html">[19]</a></sup>
+</p>
+
+<p>
+  External image files are incorporated with the <code>< img /></code> or <code>< object /></code> elements. (With <a href="RedirectedPage.html">XHTML</a>, the <a href="RedirectedPage.html">SVG</a> language can also be used to write graphics within the document, though linking to external SVG files is
+  generally simpler.)<sup><a href="RedirectedPage.html">[20]</a></sup> Where an image is not purely decorative, HTML allows replacement content with similar
+  semantic value to be provided for non-visual user agents.
+</p>
+
+<p>
+  An HTML document can also be extended through the use of scripts to provide additional behaviors beyond the
+  abilities of HTML hyperlinks and forms.
+</p>
+
+<hr>
+<h2>Appearance</h2>
+<hr>
+<label for="text">text</label>
+<hr>
+<input type="radio" name="text" id="Small" value="Small"> Small
+<input type="radio" name="text" id="Medium" value="Medium"> Medium
+<input type="radio" name="text" id="Large" value="Large"> Large
+<br>
+<label for="Width">Width</label>
+<hr>
+<input type="radio" name="Width" id="wide" value="wide"> Wide
+<input type="radio" name="Width" id="standard" value="standard"> Standard
+<br>
+<label for="color">Color</label>
+<hr>
+<input type="radio" name="color" id="Auto" value="Auto"> Automatic
+<input type="radio" name="color" id="light" value="light"> Light
+<input type="radio" name="color" id="dark" value="dark"> Dark
+
+</body>
+</html>
