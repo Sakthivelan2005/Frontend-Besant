@@ -1,8 +1,9 @@
+start: 
 let a = +prompt("Enter a mark:")
 switch (true) {
     case (a > 100):
         a = prompt("Enter correct number within 100")
-        break;
+        break start;
     case (a < 50):
         console.log("Fail")
         break;
