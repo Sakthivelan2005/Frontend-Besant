@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image</title>
+</head>
+<body>
+    <style>
+        #image{
+            height: 50px;
+            width: 50px;
+            border: 4px solid black;
+            background-color: blue;
+            margin-bottom: 20px;
+            
+        }
+    </style>
+
+    <img src="../images/images1.jpeg" id="img" alt="">
+   <br>
+    <button onclick="changeImge()">Click me</button>
+    
+    <script >
+
+        let img = document.getElementById('img');
+        let images = ["../images/images1.jpeg","../images/images2.jpeg","../images/images3.jpeg","../images/images4.jpeg"]
+        function changeImge(){
+            img.src =`${images[Math.round(Math.random()*3)]}`;
+            console.log(img.src)
+        }
+    </script>
+</body>
+</html>

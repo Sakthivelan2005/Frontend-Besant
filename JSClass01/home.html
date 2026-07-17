@@ -6,7 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    
-<script src="Loops/forIn_forOfLoops.js"></script>
+    <div id="box" style="height: 50px; width: 50px;"></div>
+    <br>
+    <button onclick="changeBg()">change</button>
+    <style>
+        #box{
+            height: 50px;
+            width: 50px;
+            border: 4px solid black;
+            background-color: blue;
+        }
+    </style>
+<script>
+
+    function changeBg(){
+        let box = document.getElementById("box");
+        box.style.backgroundColor = `#${Math.round(Math.random()*100000)}`;
+        console.log("cliked: ", `#${Math.round(Math.random()*100000)+10000}`);
+    }
+
+</script>
 </body>
 </html>
