@@ -40,16 +40,60 @@
 <body>
     <div id="sos">
         <p>SOS</p>
-        <audio id="sound" src="freesound_community-sos-43210.mp3"></audio>
+        <audio id="sound1" src="/Project_SOS/sounds/click.wav"></audio>
+        <audio id="sound2" src="/Project_SOS/sounds/playzz-fah-491090.mp3"></audio>
+        <audio id="sound3" src="/Project_SOS/sounds/mixkit-modern-technology-select-3124.wav"></audio>
+        
+
+        
     </div>
     <script>
-      const sound = document.getElementById('sound');
+      const sound1 = document.getElementById('sound1');
+      const sound2 = document.getElementById('sound2');
+      const sound3 = document.getElementById('sound3');
+      
+      
+      
       document.getElementById('sos').addEventListener('click',
             function(){
-               sound.play()
+               sound1.play()
                console.log("pressed..!")
             }
         );
+        document.getElementById('sos').addEventListener('dblclick',
+            function(){
+               sound2.play()
+               console.log("Double pressed..!")
+            }
+        );
+
+        document.addEventListener('keydown',
+            function(){
+               sound2.play()
+               console.log("Double pressed..!")
+            }
+        );
+        document.addEventListener('keyup',
+            function(){
+               return
+            }
+        );
+        document.addEventListener('mouseover',
+            function(){
+               sound3.play()
+               console.log("Double pressed..!")
+            }
+        );
+        document.addEventListener('mouseout',
+            function(){
+               return
+            }
+        );
+        
+
+        
+
+        
     </script>
 </body>
 </html>
